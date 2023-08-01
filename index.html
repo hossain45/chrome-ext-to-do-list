@@ -19,18 +19,50 @@
     theme: {
         extend: {
         colors: {
-        'mycolor': '#B68C5A',
-        },
+            'mycolor': '#a6a6a6',
+            },
     fontFamily: {
         'primaryFont': ['EB Garamond', 'serif'],
         'secondaryFont': ['Poppins', 'sans-serif'],
-    },
+        },
     },
 },
     }
 </script>
 </head>
 <body>
-    
+    <!-- greeting section -->
+    <section class="greeting">
+        <h1>
+            12:23:34 AM
+        </h1>
+        <p>
+            Good Morning! What's Your Plan For Today?
+        </p>
+    </section>
+    <!-- add task area -->
+    <section class="task-area">
+        <div>
+            <textarea name="task" id="tastText">
+                hlo
+            </textarea>
+            <button type="submit" class="btn bg-mycolor">
+                Add Task
+            </button>
+        </div>
+    </section>
+    <!-- task container -->
+    <section class="task-container">
+        <div class="left">
+
+        </div>
+        <div class="right">
+
+        </div>
+    </section>
+    <!-- last update tracking area -->
+    <p>
+        last updated: 
+    </p>
 </body>
 </html>
