@@ -42,58 +42,27 @@
     </section>
     <!-- add task area -->
     <section class="task-area">
-        <div class="flex justify-center items-center gap-5">
-            <input name="task" id="tastText" class="w-1/3 rounded-lg p-3" placeholder="List your tasks...">
+        <form class="flex justify-center items-center gap-5" id="form">
+            <input name="task" id="taskText" class="w-1/3 rounded-lg p-3" placeholder="List your tasks...">
             </input>
-            <button type="submit" class="btn btn-neutral bg-mycolor rounded-lg text-white border-none">
+            <button type="submit" id="addTaskBtn" class="btn btn-neutral bg-mycolor rounded-lg text-white border-none" onclick="addTask()" >
                 Add Task
             </button>
-        </div>
+        </form>
     </section>
     <!-- task container -->
     <section class="task-container max-w-5xl mx-auto flex justify-center items-center gap-5 text-2xl font-secondaryFont my-10 ">
         <div class="left-div flex-1 p-5 ">
             <p class="font-secondaryFont font-medium text-2xl pb-5">Tasks To Do</p>
-            <ul class=" flex flex-col gap-5">
-                <li>
-                    <input type="checkbox" name="item1" id="item1">
-                    <label for="item1">Item 1</label>
-                    <button class="btn btn-square">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                    </button>
-                </li>
-                <li>
-                    <input type="checkbox" name="item2" id="item2">
-                    <label for="item2">Item 2</label>
-                    <button class="btn btn-square">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                    </button>
-                </li>
-                <li>
-                    <input type="checkbox" name="item3" id="item3">
-                    <label for="item3">Item 3</label>
-                    <button class="btn btn-square">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                    </button>
-                </li>
+            <ul class=" flex flex-col gap-5" id="toDoTasks">
+                
             </ul>              
         </div>
         <div class="divider divider-horizontal"></div>
         <div class="right-div flex-1 p-5">
             <p class="font-secondaryFont font-medium text-2xl pb-5">Tasks Completed</p>
-            <ul class="line-through flex flex-col gap-5">
-                <li>
-                    <input type="checkbox" name="item1" id="item1">
-                    <label for="item1">Item 1</label>
-                </li>
-                <li>
-                    <input type="checkbox" name="item2" id="item2">
-                    <label for="item2">Item 2</label>
-                </li>
-                <li>
-                    <input type="checkbox" name="item3" id="item3">
-                    <label for="item3">Item 3</label>
-                </li>
+            <ul class="line-through flex flex-col gap-5" id="completedTasks">
+                
             </ul>
         </div>
     </section>
@@ -101,5 +70,6 @@
     <!-- <p>
         last updated: 
     </p> -->
+    <script src="main.js"></script>
 </body>
 </html>

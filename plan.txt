@@ -1,0 +1,3 @@
+1. catch string 
+2. click event
+3. innertext 
