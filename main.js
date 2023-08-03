@@ -4,6 +4,29 @@ let form = document.getElementById("form");
 let addTaskBtn = document.getElementById("addTaskBtn");
 let toDoTasks = document.getElementById("toDoTasks");
 let completedTasksContainer = document.getElementById("completedTasks");
+let time = document.getElementById("time");
+let greeting = document.getElementById("greeting");
+     
+function updateTime() {
+    let timeObj = new Date();
+    let hours = timeObj.getHours();
+    let minutes = timeObj.getMinutes();
+    let seconds = timeObj.getSeconds();
+
+    let currentTime = hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+    time.innerHTML = currentTime + ' ' + (hours < 12 ? 'AM' : 'PM');
+
+    let greeting = "";
+    if (hours >= 5 && hours < 12) {
+      greeting = "Good Morning";
+    } else if (hours >= 12 && hours < 18) {
+      greeting = "Good Afternoon";
+    } else {
+      greeting = "Good Evening";
+    }
+    document.getElementById('greeting').innerHTML = greeting;
+  }
+  setInterval(updateTime, 1000);
 
 // createTask function
 function createTask (task) {
@@ -17,6 +40,9 @@ function createTask (task) {
     // appneding values
     listItem.appendChild(checkBox);
     listItem.appendChild(label);
+    label.contentEditable = "true";
+
+    listItem.classList.add('flex', 'justify-left', 'items-center', 'gap-5');
 
     return listItem;
 }
@@ -38,13 +64,16 @@ function bindToDoTasks (taskItem, checkboxClick) {
 function completeTask() {
     let listItem = this.parentNode;
     let deleteBtn = document.createElement('button');
-    deleteBtn.innerText = 'Delete';
+    // adding dlt btn as icon to parent element 
+    let icon = document.createElement('i');
+    icon.classList.add('fa-solid', 'fa-trash', 'text-red-500');
+    deleteBtn.appendChild(icon);
     deleteBtn.className = 'delete';
     listItem.appendChild(deleteBtn);
-
     let checkBox = listItem.querySelector('input[type="checkbox"]');
     checkBox.remove();
     completedTasksContainer.appendChild(listItem);
+    listItem.classList.add('flex', 'justify-between', 'items-center');
     //bind the new list item to bindCompleteTask
     bindCompleteTask(listItem, deleteTask);
 }
@@ -61,3 +90,4 @@ function deleteTask () {
 }
 
 form.addEventListener('submit', addTask);
+

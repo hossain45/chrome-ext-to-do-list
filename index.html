@@ -33,11 +33,11 @@
 <body class="m-0 p-0 box-border">
     <!-- greeting section -->
     <section class="greeting text-center mt-20 mb-8">
-        <h1 class="font-primaryFont font-bold text-5xl pb-5">
-            12:23:34 AM
+        <h1 class="font-primaryFont font-bold text-5xl pb-5" id="time">
+
         </h1>
-        <p class="font-secondaryFont font-semibold text-3xl  ">
-            Good Morning! What's Your Plan For Today?
+        <p class="font-secondaryFont font-semibold text-3xl">
+            <span id="greeting"></span>! What's Your Plan For Today?
         </p>
     </section>
     <!-- add task area -->
@@ -50,17 +50,21 @@
             </button>
         </form>
     </section>
+    <!-- list heading -->
+    <section class="flex justify-evenly items-center my-5">
+        <p class="font-secondaryFont font-medium text-2xl pb-5">Tasks To Do</p>
+        <p class="font-secondaryFont font-medium text-2xl pb-5 ">Tasks Completed</p>
+
+    </section>
     <!-- task container -->
     <section class="task-container max-w-5xl mx-auto flex justify-center items-center gap-5 text-2xl font-secondaryFont my-10 ">
-        <div class="left-div flex-1 p-5 ">
-            <p class="font-secondaryFont font-medium text-2xl pb-5">Tasks To Do</p>
+        <div class="left-div flex-1 p-5 ">            
             <ul class=" flex flex-col gap-5" id="toDoTasks">
                 
             </ul>              
         </div>
         <div class="divider divider-horizontal"></div>
-        <div class="right-div flex-1 p-5">
-            <p class="font-secondaryFont font-medium text-2xl pb-5">Tasks Completed</p>
+        <div class="right-div flex-1 p-5">            
             <ul class="line-through flex flex-col gap-5" id="completedTasks">
                 
             </ul>
