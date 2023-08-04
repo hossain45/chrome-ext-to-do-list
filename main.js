@@ -49,8 +49,7 @@ function createTask (task) {
 // addTask function
 function addTask (event) {
     event.preventDefault();
-    let listItem = createTask(taskText.value);
-    toDoTasks.appendChild(listItem);
+    let listItem = createTask(taskText.value);toDoTasks.appendChild(listItem);
     taskText.value = '';
     //bind the new list item to toDoTasks
     bindToDoTasks (listItem, completeTask);
@@ -90,4 +89,3 @@ function deleteTask () {
 }
 
 form.addEventListener('submit', addTask);
-
